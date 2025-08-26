@@ -1,0 +1,6 @@
+name: QueueLib
+version: ${version}
+main: io.github.grassproject.queueLib.QueueLib
+api-version: '1.21'
+authors: [ 아포칼립스 ]
+website: https://grassproject.github.io
