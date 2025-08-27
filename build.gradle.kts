@@ -1,7 +1,6 @@
 plugins {
     kotlin("jvm") version "2.2.10"
     id("com.gradleup.shadow") version "8.3.0"
-    id("xyz.jpenilla.run-paper") version "2.3.1"
 }
 
 group = "io.github.grassproject"
@@ -20,11 +19,6 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 }
 
-tasks {
-    runServer {
-        minecraftVersion("1.21")
-    }
-}
 
 val targetJavaVersion = 21
 kotlin {

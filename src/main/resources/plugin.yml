@@ -4,3 +4,5 @@ main: io.github.grassproject.queueLib.QueueLib
 api-version: '1.21'
 authors: [ 아포칼립스 ]
 website: https://grassproject.github.io
+libraries:
+  - org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.2.10
