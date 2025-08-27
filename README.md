@@ -1,6 +1,13 @@
 # QueueLib
 ### Minecraft mini game QueueLib
 
+# Dependency
+```groovy
+maven { url = uri("https://jitpack.io") }
+
+compileOnly("com.github.GrassProject:QueueLib:Tag")
+```
+
 # How to use?
 ```java
 import io.github.grassproject.queueLib.QueueBuilder;
