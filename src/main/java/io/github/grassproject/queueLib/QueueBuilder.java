@@ -18,51 +18,58 @@ public class QueueBuilder {
     /**
      * @param name the name of Queue
      */
-    public void setName(String name) {
+    public QueueBuilder setName(String name) {
         this.name=name;
+        return this;
     }
 
     /**
      * @param type Custom type of the Queue
      */
-    public void setType(String type) {
+    public QueueBuilder setType(String type) {
         this.type=type;
+        return this;
     }
 
     /**
      * @param maxPlayer Maximum player count of Queue
      */
-    public void setMaxPlayer(int maxPlayer) {
+    public QueueBuilder setMaxPlayer(int maxPlayer) {
         this.maxPlayer = maxPlayer;
+        return this;
     }
 
     /**
      * @param minPlayer Minimum of the player to start Queue
      */
-    public void setMinPlayer(int minPlayer) {
+    public QueueBuilder setMinPlayer(int minPlayer) {
         this.minPlayer = minPlayer;
+        return this;
     }
 
     /**
      * @param mapUid UUID of the world that player is moved when join Queue
      */
-    public void setMapUid(UUID mapUid) {
+    public QueueBuilder setMapUid(UUID mapUid) {
         this.mapUid = mapUid;
+        return this;
     }
 
     /**
      * @param queuemapUUID UUID of the world that player is moved when Queue starts
      */
-    public void setQueuemapUUID(@Nullable UUID queuemapUUID) {
+    public QueueBuilder setQueuemapUUID(@Nullable UUID queuemapUUID) {
         this.queuemapUUID = queuemapUUID;
+        return this;
     }
 
     /**
      * @param isDisposable If is True, when Queue Starts. It automatically removed
      * @apiNote Default is TRUE
      */
-    public void setDisposable(boolean isDisposable) {
+    public QueueBuilder setDisposable(boolean isDisposable) {
         this.isDisposable=isDisposable;
+        return this;
     }
 
     public Queue build() {

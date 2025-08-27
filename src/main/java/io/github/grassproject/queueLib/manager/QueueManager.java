@@ -5,10 +5,12 @@ import io.github.grassproject.queueLib.data.QueueData;
 import io.github.grassproject.queueLib.queue.Queue;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.jetbrains.annotations.ApiStatus;
 
 import java.io.File;
 import java.util.*;
 
+@ApiStatus.Experimental
 public class QueueManager {
     private final JavaPlugin plugin= QueueLib.getPlugin();
     private final List<UUID> queueList= new ArrayList<>();

@@ -5,6 +5,7 @@ import io.github.grassproject.queueLib.data.QueueData;
 import io.github.grassproject.queueLib.events.PlayerQueueJoinEvent;
 import io.github.grassproject.queueLib.events.PlayerQueueLeaveEvent;
 import io.github.grassproject.queueLib.events.QueueStartEvent;
+import io.github.grassproject.queueLib.exception.NotEnoughPlayer;
 import io.github.grassproject.queueLib.exception.NotExistPlayer;
 import io.github.grassproject.queueLib.exception.QueueMaxed;
 import org.bukkit.Bukkit;
@@ -101,6 +102,9 @@ public class Queue {
     }
 
     public void start() throws Exception {
+        if (this.joinedPlayer.size()<this.minPlayer) {
+            throw new NotEnoughPlayer(this.name);
+        }
         World world= Bukkit.getWorld(mapUid);
         Location location= world != null ? world.getSpawnLocation() : null;
         this.joinedPlayer.forEach( uuid-> {
