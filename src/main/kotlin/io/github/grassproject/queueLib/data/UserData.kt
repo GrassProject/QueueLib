@@ -1,4 +1,4 @@
-package io.github.grassproject.queueLib.userData
+package io.github.grassproject.queueLib.data
 
 import io.github.grassproject.queueLib.QueueLib
 import io.github.grassproject.queueLib.player.Waiter
@@ -15,7 +15,7 @@ class UserData(private val waiter: Waiter) {
     }
 
     private val plugin=QueueLib.plugin
-    private val file= File(plugin.dataFolder, "userdata/${waiter.getPlayer().uniqueId}")
+    internal val file= File(plugin.dataFolder, "userdata/${waiter.getPlayer().uniqueId}")
     private val config=YamlConfiguration.loadConfiguration(file)
     private fun YamlConfiguration.reload() {
         this.load(file)
@@ -25,4 +25,6 @@ class UserData(private val waiter: Waiter) {
         config.reload()
         return config
     }
+
+
 }

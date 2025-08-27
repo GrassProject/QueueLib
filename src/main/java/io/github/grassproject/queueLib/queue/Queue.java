@@ -24,8 +24,9 @@ public class Queue {
     private final int maxPlayer;
     private final int minPlayer;
     private Set<Player> joinedPlayer;
-    private final UUID mapUid;
+    @Nullable
     private final UUID queueMapUid;
+    private final UUID mapUid;
 
     private final JavaPlugin plugin= QueueLib.getPlugin();
 
@@ -76,9 +77,7 @@ public class Queue {
         }
     }
 
-    public void start() {
-
-    }
+    public void start() {}
 
     public String getName() {
         return name;
