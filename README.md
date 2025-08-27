@@ -2,6 +2,7 @@
 ### Minecraft mini game QueueLib
 
 # Dependency
+[![](https://jitpack.io/v/GrassProject/QueueLib.svg)](https://jitpack.io/#GrassProject/QueueLib)
 ```groovy
 maven { url = uri("https://jitpack.io") }
 
