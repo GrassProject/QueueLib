@@ -12,7 +12,7 @@ repositories {
     maven("https://repo.papermc.io/repository/maven-public/") {
         name = "papermc-repo"
     }
-    maven("https://jetpack.io")
+    maven("https://jitpack.io")
 }
 
 dependencies {
