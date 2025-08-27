@@ -3,7 +3,7 @@ package io.github.grassproject.queueLib.events
 import org.bukkit.entity.Player
 import org.bukkit.event.HandlerList
 import org.bukkit.event.player.PlayerEvent
-import java.util.UUID
+import java.util.*
 
 class PlayerQueueJoinEvent(
     player:Player,

@@ -2,7 +2,7 @@ package io.github.grassproject.queueLib.player
 
 import io.github.grassproject.queueLib.data.UserData
 import org.bukkit.entity.Player
-import java.util.UUID
+import java.util.*
 
 class Waiter(private val player:Player) {
     companion object {
@@ -14,10 +14,10 @@ class Waiter(private val player:Player) {
 
     fun getPlayer(): Player = player
 
-    fun setQueue(uuid:UUID) {
+    fun setQueue(uuid:UUID?) {
         val userData=UserData(this)
         userData.getConfig().apply {
-            set("user.queue", uuid.toString())
+            set("user.queue", uuid?.toString())
         }.save(userData.file)
     }
 
