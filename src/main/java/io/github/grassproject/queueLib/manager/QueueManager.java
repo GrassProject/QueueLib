@@ -31,6 +31,12 @@ public class QueueManager {
         this.queueList.add(queue.getUid());
     }
 
+    public Queue getQueue(UUID uuid) {
+        return this.queueList.stream()
+                .map(u -> new QueueData(u).getQueue()).filter(Objects::nonNull)
+                .filter(q-> q.getUid().equals(uuid)).toList().getFirst();
+    }
+
     public void removeQueue(Queue queue) {
         this.queueList.remove(queue.getUid());
     }

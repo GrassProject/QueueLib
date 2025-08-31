@@ -8,6 +8,7 @@ import io.github.grassproject.queueLib.events.QueueStartEvent;
 import io.github.grassproject.queueLib.exception.NotEnoughPlayer;
 import io.github.grassproject.queueLib.exception.NotExistPlayer;
 import io.github.grassproject.queueLib.exception.QueueMaxed;
+import io.github.grassproject.queueLib.manager.QueueManager;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -34,6 +35,7 @@ public class Queue {
     private final boolean disposable;
 
     private final JavaPlugin plugin= QueueLib.getPlugin();
+    private final QueueManager manager= QueueLib.getManager();
     private final QueueData data;
 
     public static Queue fromUUID(UUID uuid) {
@@ -57,6 +59,7 @@ public class Queue {
         this.joinedPlayer = new HashSet<>();
 
         QueueData.save(this);
+        manager.addQueue(this);
         data=new QueueData(uid);
     }
 

@@ -16,14 +16,16 @@ class Waiter(private val player:Player) {
 
     fun setQueue(uuid:UUID?) {
         val userData=UserData(this)
-        userData.getConfig().apply {
+        userData.userdata.apply {
             set("user.queue", uuid?.toString())
-        }.save(userData.file)
+        }.save()
     }
 
     fun getQueue():UUID? {
-        val str=UserData(this)
-            .getConfig().getString("user.queue") ?: return null
+        val str= UserData(this).userdata.getValue(
+            "user.queue",
+            String::class
+        )
         return UUID.fromString(str)
     }
 }

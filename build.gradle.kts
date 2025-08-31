@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "io.github.grassproject"
-version = "0.1-BETA"
+version = "0.1-RC1"
 
 repositories {
     mavenCentral()
@@ -17,6 +17,7 @@ repositories {
 dependencies {
     compileOnly("io.papermc.paper:paper-api:1.21.1-R0.1-SNAPSHOT")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    compileOnly("com.github.GrassProject:GPFramework:0.2-RC2")
 }
 
 

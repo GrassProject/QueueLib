@@ -1,18 +1,21 @@
 package io.github.grassproject.queueLib
 
-import org.bukkit.plugin.java.JavaPlugin
+import io.github.grassproject.framework.core.GPPlugin
+import io.github.grassproject.queueLib.manager.QueueManager
 
-class QueueLib : JavaPlugin() {
+abstract class QueueLib : GPPlugin() {
     companion object {
         @JvmStatic
         lateinit var plugin:QueueLib
             private set
+
+        @JvmStatic
+        lateinit var manager: QueueManager
+            private set
     }
 
-    override fun onLoad() {
+    override fun load() {
         plugin=this
-    }
-
-    override fun onEnable() {
+        manager= QueueManager()
     }
 }

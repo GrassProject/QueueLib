@@ -1,5 +1,6 @@
 package io.github.grassproject.queueLib.events
 
+import io.github.grassproject.framework.core.events.GPPlayerEvent
 import org.bukkit.entity.Player
 import org.bukkit.event.HandlerList
 import org.bukkit.event.player.PlayerEvent
@@ -8,14 +9,4 @@ import java.util.*
 class PlayerQueueJoinEvent(
     player:Player,
     val queue: UUID
-): PlayerEvent(player) {
-    override fun getEventName() = "PlayerQueueJoinEvent"
-    override fun getHandlers(): HandlerList = getHandlerList()
-    companion object {
-        private val handlers = HandlerList()
-        @JvmStatic
-        fun getHandlerList(): HandlerList {
-            return handlers
-        }
-    }
-}
+): GPPlayerEvent(player, "PlayerQueueJoinEvent")

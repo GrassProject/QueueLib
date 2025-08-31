@@ -1,10 +1,11 @@
 package io.github.grassproject.queueLib.data
 
+import io.github.grassproject.framework.config.GPConfig
 import io.github.grassproject.queueLib.QueueLib
 import io.github.grassproject.queueLib.player.Waiter
+import org.bukkit.configuration.file.FileConfiguration
 import org.bukkit.configuration.file.YamlConfiguration
 import org.bukkit.entity.Player
-import java.io.File
 
 class UserData(private val waiter: Waiter) {
     companion object {
@@ -15,16 +16,14 @@ class UserData(private val waiter: Waiter) {
     }
 
     private val plugin=QueueLib.plugin
-    internal val file= File(plugin.dataFolder, "userdata/${waiter.getPlayer().uniqueId}")
-    private val config=YamlConfiguration.loadConfiguration(file)
-    private fun YamlConfiguration.reload() {
-        this.load(file)
+    internal val userdata= GPConfig(plugin.dataFolder, "userdata/${waiter.getPlayer().uniqueId}")
+    private val config= userdata.config
+    private fun FileConfiguration.reload() {
+        userdata.reload(userdata.file)
     }
 
-    fun getConfig():YamlConfiguration {
+    fun getConfig():FileConfiguration {
         config.reload()
         return config
     }
-
-
 }
