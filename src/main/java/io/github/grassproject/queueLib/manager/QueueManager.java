@@ -10,10 +10,7 @@ import org.jetbrains.annotations.ApiStatus;
 import java.io.File;
 import java.util.*;
 
-@Deprecated
-/*
-  @deprecated Dont Use it
- * */
+
 @ApiStatus.Experimental
 public class QueueManager {
     private final JavaPlugin plugin= QueueLib.getPlugin();

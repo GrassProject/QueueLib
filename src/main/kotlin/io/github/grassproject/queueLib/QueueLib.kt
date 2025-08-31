@@ -1,9 +1,10 @@
 package io.github.grassproject.queueLib
 
 import io.github.grassproject.framework.core.GPPlugin
+import io.github.grassproject.queueLib.commands.QueueCommand
 import io.github.grassproject.queueLib.manager.QueueManager
 
-abstract class QueueLib : GPPlugin() {
+class QueueLib : GPPlugin() {
     companion object {
         @JvmStatic
         lateinit var plugin:QueueLib
@@ -17,5 +18,13 @@ abstract class QueueLib : GPPlugin() {
     override fun load() {
         plugin=this
         manager= QueueManager()
+    }
+
+    override fun enable() {
+        QueueCommand()
+    }
+
+    override fun disable() {
+
     }
 }
