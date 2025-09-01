@@ -1,6 +1,6 @@
 package io.github.grassproject.queueLib.commands
 
-import io.github.grassproject.framework.core.command.GPCommand
+import io.github.grassproject.framework.command.GPCommand
 import io.github.grassproject.queueLib.QueueLib
 import org.bukkit.Bukkit
 import org.bukkit.command.CommandSender

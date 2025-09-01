@@ -16,8 +16,8 @@ class QueueLib : GPPlugin() {
     }
 
     override fun load() {
-        plugin=this
-        manager= QueueManager()
+        plugin = this
+        manager = QueueManager()
     }
 
     override fun enable() {

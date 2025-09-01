@@ -1,10 +1,13 @@
+import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
+import org.gradle.kotlin.dsl.register
+
 plugins {
     kotlin("jvm") version "2.2.10"
     id("com.gradleup.shadow") version "8.3.0"
 }
 
 group = "io.github.grassproject"
-version = "0.1-RC1"
+version = "0.1-RC3"
 
 repositories {
     mavenCentral()
@@ -17,7 +20,7 @@ repositories {
 dependencies {
     compileOnly("io.papermc.paper:paper-api:1.21.1-R0.1-SNAPSHOT")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-    compileOnly("com.github.GrassProject:GPFramework:0.2-RC2")
+    compileOnly("com.github.GrassProject:GPFramework:0.2-RC5")
 }
 
 
@@ -26,8 +29,16 @@ kotlin {
     jvmToolchain(targetJavaVersion)
 }
 
+tasks.register<ShadowJar>("shadowJarPlugin") {
+    archiveFileName.set("QueueLib-${project.version}.jar")
+
+    from(sourceSets.main.get().output)
+    configurations = listOf(project.configurations.runtimeClasspath.get())
+
+}
+
 tasks.build {
-    dependsOn("shadowJar")
+    dependsOn("shadowJarPlugin")
 }
 
 tasks.processResources {
