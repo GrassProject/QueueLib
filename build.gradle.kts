@@ -30,7 +30,7 @@ kotlin {
 }
 
 tasks.register<ShadowJar>("shadowJarPlugin") {
-    archiveFileName.set("QueueLib-${project.version}.jar")
+    archiveFileName.set("QueueLib-${version}.jar")
 
     from(sourceSets.main.get().output)
     configurations = listOf(project.configurations.runtimeClasspath.get())
